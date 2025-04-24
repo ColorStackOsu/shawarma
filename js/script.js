@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
   initRevealAnimations();
   setupEventCardHandlers();
   setupModalReset();
-  initVanillaTilt();
   //if (btn2023) btn2023.classList.add("inactive");
   //if (btn2024) btn2024.classList.remove("inactive");
 });
@@ -43,25 +42,6 @@ function initRevealAnimations() {
   
   // Initial call to reveal elements that are already visible
   revealElements();
-}
-
-function initVanillaTilt() {
-  if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll('.ribbon-stat'), {
-      max: 15,
-      speed: 800,
-      scale: 1.2,
-    });
-
-    VanillaTilt.init(document.querySelectorAll('.ribbon-red, .ribbon-black'), {
-      max: 0,    
-      speed: 400,
-      glare: true,
-      "max-glare": 0.2,
-      scale: 1,
-      perspective: 1000,
-    });
-  }
 }
 
 // Select all stat elements
