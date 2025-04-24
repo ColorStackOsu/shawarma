@@ -848,8 +848,8 @@ img{
     background-color: #EFEFEF;
     border: none;
     text-align: left;
-    width: 18rem;
-    height: 11rem;
+    width: 100%; /* Make width flexible */
+    aspect-ratio: 1.64;
     text-decoration: none;
     color: inherit;
     border-radius: 10px;

@@ -118,7 +118,7 @@ function addEventCards(events){
       const delay = ((i % 3) + 1) * 100;
 
       newDiv.innerHTML = `
-      <div class="d-flex event-card-container-sm justify-content-center reveal delay-${delay}">
+      <div class="d-flex event-card-container-sm justify-content-center reveal delay-${delay} px-2">
           <button class="event-card" data-event-id="${events[i].id}">
               <div class="event-gradient"></div>
               <img src="${events[i].img}" class="img-fluid" loading="lazy" alt="${events[i].alt}">
