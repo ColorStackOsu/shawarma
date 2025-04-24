@@ -118,15 +118,17 @@ function addEventCards(events){
       const delay = ((i % 3) + 1) * 100;
 
       newDiv.innerHTML = `
-      <div class="d-flex event-card-container-sm justify-content-center reveal delay-${delay} px-2">
-          <button class="event-card" data-event-id="${events[i].id}">
-              <div class="event-gradient"></div>
-              <img src="${events[i].img}" class="img-fluid" loading="lazy" alt="${events[i].alt}">
-              <div class="event-inner py-3 px-2">
-                  <h3 class="mb-0">${events[i].name}</h3>
-                  <p class="text-red fw-semibold">${events[i].date}</p>
-              </div>
-          </button>
+      <div class="d-flex event-card-container-sm justify-content-center reveal delay-${delay}">
+        <button class="event-card" data-event-id="${events[i].id}">
+          <div class="event-card-media">
+            <img src="${events[i].img}" loading="lazy" alt="${events[i].alt}">
+            <div class="event-gradient"></div>
+          </div>
+          <div class="event-inner py-3 px-2">
+            <h3 class="mb-0">${events[i].name}</h3>
+            <p class="text-red fw-semibold">${events[i].date}</p>
+          </div>
+        </button>
       </div>`;
 
       eventContainer.appendChild(newDiv);
