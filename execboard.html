@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="css/style.css"> 
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Logo.png"/>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <title>ColorStack@OSU</title>
+
+
+</head>
+<body>
+    <!--NAVIGATION-->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-md-5 px-3">
+    
+                <!--Logo-->
+                <a class = "navbar-brand" href="index.html" target="_self">
+                    <img class = "nav-logo p-0" src="images/Logo Horizontal.png" alt="ColorStackOSU Logo">
+                </a>
+    
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Nav Items-->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-4"> <a href="events.html" class="nav-link">Events</a> </li>
+                        <li class="nav-item mx-4"> <a href="sponsors.html" class="nav-link">Sponsors</a> </li>
+                        <li class="nav-item mx-4"> <a href="execboard.html" class="nav-link">Meet Us</a> </li>
+                        <li class="nav-item dropdown mx-4"> 
+                            <a href="#" class="nav-link dropdown-toggle role="button" data-bs-toggle="dropdown" aria-expanded="false"">
+                                About Us
+                            </a> 
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html#about-us">About</a></li>
+                                <li><a class="dropdown-item" href="about.html#contact-us">Contact Us</a></li>
+                            </ul>
+                        
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+
+    <!-- Meet The Board-->
+    <section id="meet-the-board">
+        <div class="container">
+            <h1 class="text-center mt-4 py-4">
+                <span class="text-secondary">&lt;</span> 
+                Meet The Board 
+                <span class="text-secondary">/&gt;</span>
+            </h1>
+
+            
+
+            <div id="board-body" class="row g-md-4 m-3">
+               <!-- ROW 1 -->
+                <!-- Ephratah -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-100">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/ephratah-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="mb-0">Fun fact here!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                            
+                            <a href="https://www.linkedin.com/in/ephratahmh/" class="text-decoration-none text-dark ">
+                                <h4 class = "mt-3 mb-0" >
+                                    Ephratah Meskel
+                                    <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                                </h4>
+                            </a> 
+                        
+                        <p class="board-card-role mb-0">President</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+
+                    </div>
+                </div>
+            
+                <!-- Kwasi -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-200">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/kwasi-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                                <!--Fun Fact Popup (Hidden)-->
+                                <div class="fun-fact-overlay">
+                                    <div class="fun-fact-content">
+                                        <h6 class="mb-1">Fun Fact</h6>
+                                        <p class="mb-0">Fun fact here!</p>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/kwasi-sarfo-fosu-21a179255/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Kwasi Fosu
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a> 
+                        <p class="board-card-role mb-0">Vice President</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Ahmed -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-300">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/ahmed-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="mb-0">Fun fact here!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.linkedin.com/in/ahmednmohamed/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Ahmed Nazar
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a> 
+                        <p class="board-card-role mb-0">Secretary</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Asmali -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-400">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/asmali-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="mb-0">Fun fact here!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/mohamed-asmali/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Mohamed Asmali
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Treasurer</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+
+            
+            
+                <!-- ROW 2 -->
+            
+                <!-- Mazin -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-100">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/mazin-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                                <!--Fun Fact Popup (Hidden)-->
+                                <div class="fun-fact-overlay">
+                                    <div class="fun-fact-content">
+                                        <h6 class="mb-1">Fun Fact</h6>
+                                        <p class="mb-0">Fun fact here!</p>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/mazin-tagelsir/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Mazin Tagelsir
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Operations</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Hosanna -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-200">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/hosanna-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="mb-0">Fun fact here!</p>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <a href="https://www.linkedin.com/in/hosannaao/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Hosanna Otchere
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Communications</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Nabeu -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-300">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/nabeu-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="mb-0">Nabeu has run a half marathon!</p>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <a href="https://www.linkedin.com/in/nabeu-habetaslassa-2a356b1b0/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Nabeu Habetaslassa
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Corporate</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Nabeu has run a half marathon!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Austen -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-400">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/austen-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                    <h6 class="mb-1">Fun Fact</h6>
+                                    <p class="fun-fact-text mb-0">Austen has been designing since 5th grade!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/austenyoung/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Austen Young
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Web Development</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+
+            
+            
+                <!-- ROW 3-->
+                <!-- Grid Balancer (Large Viewport)-->
+                <div class="col-lg-3 col-md-6 d-none d-lg-block"></div>
+
+                <!-- Jared -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-100">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/jared-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+
+                            <!--Fun Fact Popup (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                <h6 class="mb-1">Fun Fact</h6>
+                                <p class="mb-0">Jared has traveled to 4 different continents!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/jared-alonzo/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Jared Alonzo
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Professional Development</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Jared has traveled to 4 different continents!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ashley -->
+                <div class="col-lg-3 col-md-4 col-6 py-md-3 mx-auto">
+                    <div class="board-card reveal delay-200">
+                        <div class="board-card-inner rounded-4">
+                            <img src="images/eboard-photos/ashley-pic.jpg" class="img-fluid rounded-4">
+                            <div class="gradient-overlay"></div> <!--Hover effect-->
+
+                            <!--Fun Fact Popup For Large Viewport (Hidden)-->
+                            <div class="fun-fact-overlay">
+                                <div class="fun-fact-content">
+                                <h6 class="mb-1">Fun Fact</h6>
+                                <p class="mb-0">Fun fact here!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://www.linkedin.com/in/ashleyholbrook/" class="text-decoration-none text-dark ">
+                            <h4 class = "mt-3 mb-0" >
+                                Ashley Holbrook
+                                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+                            </h4>
+                        </a>
+                        <p class="board-card-role mb-0">Outreach</p>
+
+                        <!--Fun Fact Popup (SMALL)-->
+                        <div class="d-lg-none d-block">
+                            <hr class="divide-line-red my-2 w-50"> 
+                            <p class="mb-0">Fun fact here!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Balancer (Large Viewport)-->
+                <div class="col-lg-3 col-md-6 d-none d-lg-block"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer container-fluid">
+            <div class="row py-4 ">
+                <div class="col-12">
+                    <div class="text-md-center text-start px-3">
+                        <a href="index.html">
+                            <img class = "footer-logo" src="images/Logo Horizontal.png" alt="Logo">
+                        </a>
+                        
+                    </div>
+    
+                    <div class="d-flex flex-md-row flex-column justify-content-md-center justify-content-start gap-md-5 gap-3 py-md-2 py-4 px-4">
+                        <a href="index.html" class="nav-link footer-nav-link d-md-none d-block">Home</a>
+                        <a href="events.html" class="nav-link footer-nav-link">Events</a>
+                        <a href="sponsors.html" class="nav-link footer-nav-link">Sponsors</a>
+                        <a href="execboard.html" class="nav-link footer-nav-link">Meet Us</a>
+                        <a href="about.html" class="nav-link footer-nav-link">About Us</a>
+                    </div>
+    
+                    <div class="d-flex justify-content-center py-2 w-100">
+                        <a href="mailto:colorstackosu@gmail.com" class="btn btn-primary rounded-pill mx-2">
+                            <i class="bi bi-envelope-fill"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/colorstackosu/" target = "_blank" class="btn btn-primary rounded-pill mx-2">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/colorstack-osu/" target = "_blank" class="btn btn-primary rounded-pill mx-2"> 
+                            <i class="bi bi-linkedin"> </i>
+                        </a>
+                        <a href="https://colorstackosu.slack.com/" target = "_blank" class="btn btn-primary rounded-pill mx-2"> 
+                            <i class="bi bi-slack"> </i>
+                        </a>
+                        
+                    </div>
+                    <p class="text-center mt-2 mb-0 opacity-50">
+                        © <script>document.write(new Date().getFullYear())</script> ColorStack Ohio State. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPT LOADING -->
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!--CustomJS-->
+    <script type = "module" src="js/script.js"></script>
+
+ 
+</body>
+</html>
