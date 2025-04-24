@@ -1467,8 +1467,7 @@ img{
     }
 
     .our-mission-card {
-        width: 90%;  
-        max-width: 400px;  
+        width: 100%;    
     }
     
     .our-mission-card img {
