@@ -27,6 +27,20 @@
 
 </head>
 <body>
+
+
+        <!-- Add this right after your opening <body> tag -->
+    <div id="passwordProtection" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #202020; z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div style="background-color: white; padding: 2rem; border-radius: 10px; max-width: 400px; text-align: center;">
+            <img src="images/Logo.png" alt="ColorStackOSU Logo" style="width: 80px; margin-bottom: 1rem;">
+            <h2>ColorStack OSU</h2>
+            <p>This page is password protected.</p>
+            <input type="password" id="passwordInput" class="form-control mb-3" placeholder="Enter password">
+            <button onclick="checkPassword()" class="btn btn-primary">Submit</button>
+            <p id="errorMessage" style="color: #BC0E2E; margin-top: 1rem; display: none;">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+
     <!--NAVIGATION-->
     <header>
         <nav class="navbar navbar-expand-lg">
@@ -285,7 +299,7 @@
                                 <div class="stat-divider d-md-block d-none"></div>
     
                                 <div data-tilt data-tilt-max="15" data-tilt-speed="800" data-tilt-scale="1.2">
-                                    <div class="ribbon-stat" data-tilt>
+                                    <div class="ribbon-stat">
                                         <h2 class="mb-0 responsive-stat">25+</h2>
                                         <h5 class="responsive-subtext">2025 Offers Received</h5>
                                     </div>
@@ -724,6 +738,36 @@
         </div>
     </footer>
 
+    <script>
+        // Password protection functionality
+        const correctPassword = "shawarma"; 
+        
+        // Check if we've already been authenticated in this session
+        window.onload = function() {
+            if (sessionStorage.getItem("authenticated") === "true") {
+                document.getElementById("passwordProtection").style.display = "none";
+            }
+        };
+        
+        function checkPassword() {
+            const passwordInput = document.getElementById("passwordInput").value;
+            
+            if (passwordInput === correctPassword) {
+                // Save authentication status to session storage
+                sessionStorage.setItem("authenticated", "true");
+                document.getElementById("passwordProtection").style.display = "none";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.getElementById("passwordInput").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                checkPassword();
+            }
+        });
+    </script>
 
 
     <!-- SCRIPT LOADING -->
