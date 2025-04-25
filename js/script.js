@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initRevealAnimations();
   setupEventCardHandlers();
   setupModalReset();
-  //if (btn2023) btn2023.classList.add("inactive");
-  //if (btn2024) btn2024.classList.remove("inactive");
+  if (btn2023) btn2023.classList.add("inactive");
+  if (btn2024) btn2024.classList.remove("inactive");
 });
 
 // ------------------------
