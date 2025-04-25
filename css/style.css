@@ -259,10 +259,6 @@ img{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.logos:hover .logos-slide {
-    animation-play-state: paused;
-}
-
 .logos-slide {
     display: inline-block;
     animation: 60s slide infinite linear;
@@ -1158,6 +1154,11 @@ img{
 
 /* Large Screens (992px and above) */
 @media (min-width: 992px) {
+
+    .logos:hover .logos-slide {
+        animation-play-state: paused;
+    }
+    
     .stat-icon {
         font-size: 8rem;
     }
