@@ -119,6 +119,133 @@ function addEventCards(events){
 //load cards
 addEventCards(EVENTS_DATA);
 
+// ------------------------
+// BOARD CARD FUNCTIONS
+// ------------------------
+
+function displayBoard(year){
+  const boardContainer = document.getElementById("board-body");
+  const members = BOARD_DATA.boards[year].members; //grab members of respective year
+
+  if(!boardContainer){
+    return;
+  }else{
+    boardContainer.innerHTML = ''; //clear container
+
+    for(let i = 0 ; i < members.length; i++){
+      const commentNode = document.createComment(` ${members[i].name} `); // comment member's name
+      boardContainer.appendChild(commentNode);
+
+      //Create member card
+      const memberCard = document.createElement("div");
+      memberCard.classList.add("col-lg-3", "col-md-4", "col-6", "py-md-3", "mx-auto");
+      
+      const delay = ((i % 4) + 1) * 100; // calculate delay needed based on position in row
+
+      memberCard.innerHTML = `
+      <div class="board-card reveal delay-${delay}">
+        <div class="board-card-inner rounded-4">
+            <img src="${members[i].img}" class="img-fluid rounded-4">
+            <div class="gradient-overlay"></div> <!--Hover effect-->
+            <!--Fun Fact Popup (Hidden)-->
+            <div class="fun-fact-overlay">
+                <div class="fun-fact-content">
+                    <h6 class="mb-1">Fun Fact</h6>
+                    <p class="mb-0">${members[i].funfact}</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="${members[i].linkedin}" class="text-decoration-none text-dark ">
+            <h4 class = "mt-3 mb-0" >
+                ${members[i].name}
+                <i class="bi bi-linkedin text-dark fs-6 align-items-center"></i>
+            </h4>
+        </a> 
+        
+        <p class="board-card-role mb-0">${members[i].position}</p>
+
+        <!--Fun Fact Popup (SMALL)-->
+        <div class="d-lg-none d-block">
+            <hr class="divide-line-red my-2 w-50"> 
+            <p class="mb-0">${members[i].funfact}</p>
+        </div>
+
+      </div>`
+
+      boardContainer.appendChild(memberCard);
+
+    }
+
+    balanceGrid(boardContainer, members.length); //balance bootstrap grid if last row is not full (center)
+    initRevealAnimations();
+  }
+
+}
+displayBoard("2024-2025"); // display most recent board by default
+
+//BUTTON LOGIC
+const btn2023 = document.getElementById("btn-2023-2024");
+const btn2024 = document.getElementById("btn-2024-2025");
+
+//2023-2024 Button
+if(btn2023){
+  btn2023.addEventListener("click", function(){
+    displayBoard("2023-2024");
+  
+    const buttons = document.querySelectorAll(".btn-primary");
+    //set all buttons to inactive
+    buttons.forEach(btn => {
+      btn.classList.add("inactive");
+    })
+    btn2023.classList.remove("inactive"); // set target button to active
+  
+  });
+}
+
+//2024-2025 Button
+if(btn2024){
+  btn2024.addEventListener("click", function(){
+    displayBoard("2024-2025");
+  
+    const buttons = document.querySelectorAll(".btn-primary");
+    //set all buttons to inactive
+    buttons.forEach(btn => {
+      btn.classList.add("inactive");
+    })
+    btn2024.classList.remove("inactive"); // set target button to active
+  });
+}
+
+
+// Add empty "balancer" divs to balance and center bootstrap grid system of last row
+function balanceGrid(container, totalMembers){
+  const maxPerRow = 4;
+  const membersInLastRow = totalMembers % maxPerRow || maxPerRow;
+  
+  // Only add balancers if we have 1 or 2 members in the last row
+  if (membersInLastRow === 2) {
+    const allMemberCards = container.querySelectorAll('.col-lg-3');
+  
+    const lastRowStartIndex = totalMembers - membersInLastRow; //find index of last row
+    
+    //create balancer divs before 
+    const balancersBefore = document.createElement("div");
+    balancersBefore.classList.add("col-lg-3", "d-none", "d-lg-block");
+    
+    //insert balancer before the first card of the last row
+    const firstCardOfLastRow = allMemberCards[lastRowStartIndex];
+    container.insertBefore(balancersBefore, firstCardOfLastRow);
+
+    //const numBalancersAfter = membersInLastRow === 1 ? 2 : 1;
+
+    const balancerAfter = document.createElement("div");
+    balancerAfter.classList.add("col-lg-3", "d-none", "d-lg-block");
+    container.appendChild(balancerAfter);
+    
+  }
+}
+
 
 // ------------------------
 // GALLERY MODAL FUNCTIONS
