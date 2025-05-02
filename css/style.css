@@ -1158,7 +1158,7 @@ img{
     .logos:hover .logos-slide {
         animation-play-state: paused;
     }
-    
+
     .stat-icon {
         font-size: 8rem;
     }
@@ -1447,25 +1447,23 @@ img{
         padding-bottom: 60px; 
     }
 
-    .involved-card {
+    .involved-card, .involved-card-red {
         text-decoration: none;
-        color: black;
         max-width: 18rem;
-        height: 10rem;
+        min-height: 10rem; 
+        height: auto; 
         width: 100%;
         border-radius: 20px;
-        background: #D3D3D3;
+        padding: 1.25rem; 
         transition: all 0.3s ease;
     }
     
-    .involved-card-red {
-        text-decoration: none;
-        color: white;
-        width: 18rem;
-        height: 10rem;
-        border-radius: 20px;
-        background: #BA0C2F;
-        transition: all 0.3s ease;
+    .involved-card h4, .involved-card-red h4 {
+        font-size: 1.1rem;
+    }
+    
+    .involved-card h2, .involved-card-red h2 {
+        font-size: 1.8rem; 
     }
 
     .our-mission-text {
