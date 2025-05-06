@@ -167,8 +167,8 @@ function displayBoard(year){
 
         <!--Fun Fact Popup (SMALL)-->
         <div class="d-lg-none d-block">
-            <hr class="divide-line-red my-2 w-50"> 
-            <p class="mb-0">${members[i].funfact}</p>
+            <hr class="d-none divide-line-red my-2 w-50"> 
+            <p class="fun-fact-content mb-0">${members[i].funfact}</p>
         </div>
 
       </div>`
