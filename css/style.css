@@ -482,6 +482,7 @@ img{
 }
 
 /* Fun Fact Popup */
+
 .fun-fact-overlay {
     position: absolute;
     bottom: 0;
@@ -499,7 +500,9 @@ img{
     text-align: center;
 }
 
+
 .fun-fact-content {
+    display: none; /*delete later when ready*/
     padding: 1rem;
     color: white;
     text-align: center;
@@ -507,6 +510,7 @@ img{
 }
 
 .fun-fact-text {
+    display: none; /*delete later when ready*/
     font-size: 0.9rem; 
     line-height: 1.3;
 }
@@ -1202,10 +1206,16 @@ img{
     }
 
     /* reveal popup */
+    
+    /*UNCOMMENT WHEN READY*/
     .board-card-inner:hover .fun-fact-overlay {
+       /*
         height: auto;
         max-height: 70%; /* This prevents it from taking the whole image */
+        /*
         padding: 20px 15px;
+        */
+        
     }
 
     /* Shiny Hover Gradient Effect */
