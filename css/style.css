@@ -82,6 +82,17 @@ img{
     color: #BA0C2F;
 }
 
+.dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    overflow: visible !important; 
+  }
+  
+  .navbar, .nav-item.dropdown {
+    position: relative;
+    overflow: visible !important;
+  }
+
 /* ==========================================================================
    BUTTONS
    ========================================================================== */
