@@ -30,30 +30,28 @@ body, html{
     overflow-x: hidden;
   }
   
-  /* Fix for the body::after technique */
-body::after {
+  body::after {
     content: "";
     display: block;
     height: 1px; 
     width: 100%;
   }
   
-  /* Testimonial section specific fix */
+  /* Target the testimonial section specifically */
   #testimonials {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: visible; /* Allow content to flow naturally */
+    overflow-x: hidden;
   }
   
+  /* Fix the testimonial containers that might be causing issues */
   .testimonial-container {
     overflow-x: hidden;
-    overflow-y: visible;
-    height: auto; /* Allow container to expand with content */
   }
   
-  /* Make sure the testimonial cards don't create scrollable areas */
+  /* Fix for specific elements with height constraints */
   .testimonial-card {
-    overflow: visible;
-    height: auto;
+    overflow-x: hidden;
+    /* Allow vertical content to display normally */
+    overflow-y: visible;
   }
 /* ==========================================================================
    TYPOGRAPHY
