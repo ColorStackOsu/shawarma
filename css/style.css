@@ -31,43 +31,29 @@ body, html{
   }
   
   /* Fix for the body::after technique */
-  body::after {
+body::after {
     content: "";
     display: block;
     height: 1px; 
     width: 100%;
   }
   
-  /* Specific fixes for home page elements */
+  /* Testimonial section specific fix */
+  #testimonials {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: visible; /* Allow content to flow naturally */
+  }
   
-  /* Logo scroller fix */
-  .logos {
+  .testimonial-container {
     overflow-x: hidden;
-    max-width: 100%;
+    overflow-y: visible;
+    height: auto; /* Allow container to expand with content */
   }
   
-  /* Fix for ribbon elements in stats section */
-  .ribbon-container {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-  
-  .ribbon-red, .ribbon-black {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  
-  /* Fix for any absolutely positioned elements */
-  .position-absolute {
-    max-width: 100vw;
-  }
-  
-  /* Fix for testimonial section */
-  #testimonials .row {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
+  /* Make sure the testimonial cards don't create scrollable areas */
+  .testimonial-card {
+    overflow: visible;
+    height: auto;
   }
 /* ==========================================================================
    TYPOGRAPHY
