@@ -16,13 +16,12 @@
     font-style: normal;
 }
 
-body, html{
+/* Fix horizontal scrolling first */
+html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
   }
-
-
   
   .container-fluid {
     padding-right: 0;
@@ -37,21 +36,25 @@ body, html{
     width: 100%;
   }
   
-  /* Target the testimonial section specifically */
-  #testimonials {
-    overflow-x: hidden;
+  /* Add these additional rules to prevent overflow from other elements */
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   
-  /* Fix the testimonial containers that might be causing issues */
-  .testimonial-container {
-    overflow-x: hidden;
+  /* Now target ONLY the height constraint in testimonials, not the overflow */
+  #testimonials .testimonial-card {
+    height: auto;
+    max-height: none;
+    /* Don't change any overflow settings here */
   }
   
-  /* Fix for specific elements with height constraints */
-  .testimonial-card {
-    overflow-x: hidden;
-    /* Allow vertical content to display normally */
-    overflow-y: visible;
+  /* Handle any parent containers that might have fixed height */
+  #testimonials .d-flex.flex-column {
+    height: auto;
+    max-height: none;
+    /* Don't change any overflow settings here */
   }
 /* ==========================================================================
    TYPOGRAPHY
