@@ -752,7 +752,22 @@ img{
     height: 100%;
     max-width: 100%;
     overflow: hidden;
-    animation: moveGradient 15s ease infinite;
+    opacity: 0.15;
+    z-index: 0;
+    
+    background: linear-gradient(270deg,
+    #ffffff 0%,
+    #f8edef 10%, 
+    #f0e0e3 20%, 
+    #d86f82 35%, 
+    #bc0e2e 50%, 
+    #d86f82 65%, 
+    #f0e0e3 80%, 
+    #f8edef 90%, 
+    #ffffff 100%
+    );
+    background-size: 200% 200%;
+    animation: moveGradient 15s ease infinite;   
   }
   
   #testimonials .row {
