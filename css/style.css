@@ -16,11 +16,46 @@
     font-style: normal;
 }
 
-  body, html {
+
+body {
     overflow-x: hidden;
+}
+
+/* Make sure all images are responsive and don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for logo slider that might be causing overflow */
+.logos {
+    overflow: hidden;
     width: 100%;
-    position: relative;
-  }
+}
+
+.logos-slide {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+/* Ensure containers don't overflow */
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Fix ribbon containers that might be too wide */
+.ribbon-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.ribbon {
+    max-width: 100%;
+}
   
 /* ==========================================================================
    TYPOGRAPHY
@@ -1376,26 +1411,6 @@ img{
 
 /* Small Screens (below 768px) */
 @media (max-width: 767px) {
-
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-      }
-      
-      .container-fluid {
-        padding-right: 0;
-        padding-left: 0;
-        overflow-x: hidden;
-      }
-
-      body::after {
-        content: "";
-        display: block;
-        height: 1px; 
-        width: 100%;
-      }
-    
 
     .nav-link {
         color: #000000;
