@@ -16,23 +16,27 @@
     font-style: normal;
 }
 
-    body, html{
-        overflow-x: hidden;
-        width: 100%;
-        position: relative;
-    }
-
-  .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+    /* Add this to your CSS */
+.page-wrapper {
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
-    body::after {
-        content: "";
-        display: block;
-        height: 1px; 
-        width: 100%;
-    }
+  
+  /* Keep your existing CSS for body/html */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  /* You can still use this technique */
+  body::after {
+    content: "";
+    display: block;
+    height: 1px; 
+    width: 100%;
+  }
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
