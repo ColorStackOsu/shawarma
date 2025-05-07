@@ -22,6 +22,12 @@ body, html{
     position: relative;
   }
 
+  .container-fluid {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 /* ==========================================================================
    TYPOGRAPHY
    ========================================================================== */
@@ -541,12 +547,12 @@ img{
    ========================================================================== */
 
 .ribbon-container {
-    overflow: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-.ribbon {
-    width: 100%;
-    position: relative;
+.ribbon, .ribbon-red, .ribbon-black {
+    max-width: 100%;
 }
 
 .ribbon-red {
