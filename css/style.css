@@ -28,7 +28,6 @@ html, body {
     overflow-x: hidden;
   }
   
-  /* Fix for the body::after technique */
   body::after {
     content: "";
     display: block;
@@ -1450,6 +1449,23 @@ img{
     .reveal-sm-right.active {
         opacity: 1;
         transform: translateX(0);
+    }
+
+    #testimonials .testimonial-card {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+
+    #testimonials .d-flex.flex-column {
+    height: auto !important;
+    overflow: visible !important;
+    }
+    
+   
+    .testimonial-container {
+    overflow-y: visible !important;
     }
 
     .testimonial-card {
