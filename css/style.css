@@ -16,9 +16,8 @@
     font-style: normal;
 }
 
-body, html {
-    overflow: hidden;
-    overflow-y: auto;
+body, html{
+    overflow-x: hidden;
     width: 100%;
     position: relative;
   }
@@ -272,6 +271,7 @@ img{
 .logos {
     overflow: hidden;
     background-color: white;
+    max-width: 100%;
     white-space: nowrap;
     padding: 1.2rem 1.2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -279,6 +279,8 @@ img{
 
 .logos-slide {
     display: inline-block;
+    white-space: nowrap;
+    max-width: none;
     animation: 60s slide infinite linear;
     will-change: transform;
     padding-right: 0;
