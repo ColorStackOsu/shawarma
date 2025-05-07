@@ -96,14 +96,20 @@ img{
     color: #BA0C2F;
 }
 
-.dropdown-menu {
+.navbar .dropdown-menu {
     position: absolute;
     z-index: 1000;
-    overflow: visible !important; 
+    overflow: visible !important;
   }
   
-  .navbar, .nav-item.dropdown {
+  .navbar .dropdown, 
+  .navbar .nav-item.dropdown {
     position: relative;
+    overflow: visible !important;
+  }
+  
+  
+  .navbar .container-fluid {
     overflow: visible !important;
   }
 
@@ -909,7 +915,7 @@ img{
 
 .event-calendar {
     width: 100%;
-    height: 0; /* Set height to 0 */
+    height: 0; 
     padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625 or 56.25%) */
     position: relative;
     border-radius: 15px;
