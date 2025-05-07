@@ -16,8 +16,9 @@
     font-style: normal;
 }
 
-body, html{
+body, html {
     overflow: hidden;
+    overflow-y: auto;
     width: 100%;
     position: relative;
   }
