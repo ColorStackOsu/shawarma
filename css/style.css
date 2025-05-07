@@ -16,42 +16,25 @@
     font-style: normal;
 }
 
-
-.page-wrapper {
+html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
-}
-
-body::after {
+  }
+  
+  .container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    overflow-x: hidden;
+  }
+  
+  /* Fix for the body::after technique */
+  body::after {
     content: "";
     display: block;
     height: 1px; 
     width: 100%;
-}
-
-.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-    overflow-x: hidden;
-    max-width: 100vw;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-}
-
-.logos {
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-.ribbon-container {
-    overflow-x: hidden;
-    max-width: 100%;
-}
+  }
 
 
 /* ==========================================================================
