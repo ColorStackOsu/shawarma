@@ -44,29 +44,40 @@ function initRevealAnimations() {
   revealElements();
 }
 
-//Stat grow animation (GSAP)
+// Select all stat elements
+const statElements = document.querySelectorAll('.sm-stat');
 
-gsap.registerPlugin(ScrollTrigger);
+// Create the observer with options
+const options = {
+  root: null, // Use the viewport
+  rootMargin: '-25% -25% -25% -25%',
+  threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] // Multiple thresholds for smoother animation
+};
 
-gsap.utils.toArray('.sm-stat').forEach(stat => {
-  
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: stat,
-      start: "top 80%", 
-      end: "bottom 20%", 
-      scrub: true, 
-      markers: false, 
-      toggleActions: "play reverse play reverse" 
+// Create the observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    // The element is in view
+    if (entry.isIntersecting) {
+      // Calculate scale based on how much of the element is visible
+      const scale = 1 + (entry.intersectionRatio * 0.5);
+      
+      // Apply the transformation
+      entry.target.style.transform = `scale(${scale})`;
+      entry.target.style.transition = 'transform 0.3s ease-out';
+    } else {
+      // Reset when not in view
+      entry.target.style.transform = 'scale(1)';
     }
   });
-  
-  // More dramatic scaling effect
-  tl.fromTo(stat, 
-    { scale: 0.9, opacity: 0.7 }, 
-    { scale: 1.3, opacity: 1, ease: "power2.out" }
-  );
+}, options);
+
+
+// Start observing each stat element
+statElements.forEach(stat => {
+  observer.observe(stat);
 });
+
 
 // ------------------------
 // EVENT CARD FUNCTIONS
