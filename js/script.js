@@ -44,41 +44,6 @@ function initRevealAnimations() {
   revealElements();
 }
 
-// Select all stat elements
-const statElements = document.querySelectorAll('.sm-stat');
-
-// Create the observer with options
-const options = {
-  root: null, // Use the viewport
-  rootMargin: '-25% -25% -25% -25%',
-  threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] // Multiple thresholds for smoother animation
-};
-
-// Create the observer
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    // The element is in view
-    if (entry.isIntersecting) {
-      // Calculate scale based on how much of the element is visible
-      const scale = 1 + (entry.intersectionRatio * 0.5);
-      
-      // Apply the transformation
-      entry.target.style.transform = `scale(${scale})`;
-      entry.target.style.transition = 'transform 0.3s ease-out';
-    } else {
-      // Reset when not in view
-      entry.target.style.transform = 'scale(1)';
-    }
-  });
-}, options);
-
-
-// Start observing each stat element
-statElements.forEach(stat => {
-  observer.observe(stat);
-});
-
-
 // ------------------------
 // EVENT CARD FUNCTIONS
 // ------------------------
