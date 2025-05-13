@@ -6,6 +6,11 @@ html {
   font-size: calc(14px + 0.390625vw);
 }
 
+:root{
+    --primary-red: #b9283d;
+    --bg-white: #f2f2f2;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +67,7 @@ p {
 
 .text-red,
 .text-red:hover {
-  color: #b9283d;
+  color: var(--primary-red);
 }
 
 img {
@@ -97,7 +102,7 @@ img {
 }
 
 .nav-link:hover {
-  color: #b9283d;
+  color: var(--primary-red);
 }
 
 .navbar .dropdown-menu {
@@ -122,13 +127,13 @@ img {
 
 .btn-primary {
   --bs-btn-color: rgb(255, 255, 255);
-  --bs-btn-bg: #b9283d;
+  --bs-btn-bg: var(--primary-red);
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: rgb(250, 250, 250);
   --bs-btn-hover-bg: #d30f36;
   --bs-btn-hover-border-color: transparent;
   --bs-btn-active-color: rgb(255, 255, 255);
-  --bs-btn-active-bg: #b9283d;
+  --bs-btn-active-bg: var(--primary-red);
   --bs-btn-active-border-color: transparent;
   --bs-btn-active-shadow: 0 2px 4px rgba(23, 23, 23, 0.2);
 
@@ -145,10 +150,10 @@ img {
   --bs-btn-bg: #ececec;
   --bs-btn-border-color: transparent;
   --bs-btn-hover-color: rgb(250, 250, 250);
-  --bs-btn-hover-bg: #b9283d;
+  --bs-btn-hover-bg: var(--primary-red);
   --bs-btn-hover-border-color: transparent;
   --bs-btn-active-color: rgb(255, 255, 255);
-  --bs-btn-active-bg: #b9283d;
+  --bs-btn-active-bg: var(--primary-red);
   --bs-btn-active-border-color: transparent;
   --bs-btn-active-shadow: 0 2px 4px rgba(23, 23, 23, 0.2);
   color: rgb(116, 116, 116);
@@ -368,12 +373,12 @@ img {
 }
 
 .platinum-container, .silver-container{
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
 }
 
 .sponsor-header {
   position: relative;
-  background-color: #f2f2f2;
+  background-color: var(--bg-white);
 }
 
 .sponsor-header::before {
@@ -494,7 +499,7 @@ img {
 
 .about-subheader {
   font-size: 1.5rem;
-  color: #b9283d;
+  color: var(--primary-red);
   text-transform: uppercase;
   font-weight: bold;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
@@ -506,7 +511,7 @@ img {
 }
 
 .contact-us-section {
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
 }
 
 /* ==========================================================================
@@ -515,7 +520,7 @@ img {
 
 
 .meet-the-board-section{
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
 }
 
 .board-card {
@@ -544,7 +549,7 @@ img {
 }
 
 .board-card-role {
-  color: #b9283d;
+  color: var(--primary-red);
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -590,7 +595,7 @@ img {
 
 .ribbon-container {
   overflow: hidden;
-  background-color: #f2f2f2;
+  background-color: var(--bg-white);
 }
 
 .custom-shape-divider-top-black svg {
@@ -612,7 +617,7 @@ img {
       rgba(255, 255, 255, 0.02) 60%,
       rgba(255, 255, 255, 0) 80%
     ),
-    #b9283d;
+    var(--primary-red);
     
   width: 70%;
   max-height: 11rem;
@@ -681,7 +686,7 @@ img {
 
 .sm-stats-row {
   overflow: hidden;
-  background-color: #f2f2f2;
+  background-color: var(--bg-white);
 }
 
 .sm-stat {
@@ -792,7 +797,7 @@ img {
    .testimonial-container {
     position: relative;
     overflow: hidden !important;
-    background: #f2f2f2;
+    background: var(--bg-white);
   }
   
   .testimonial-container::before {
@@ -889,7 +894,7 @@ img {
 }
 
 .carousel-indicators .active {
-  background-color: #b9283d;
+  background-color: var(--primary-red);
   opacity: 1;
 }
 
@@ -899,7 +904,7 @@ img {
 
 
 .involved-container {
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
 }
 .involved-card {
   text-decoration: none;
@@ -917,7 +922,7 @@ img {
   width: 18rem;
   height: 8rem;
   border-radius: 20px;
-  background: #b9283d;
+  background: var(--primary-red);
   transition: all 0.3s ease;
 } 
 
@@ -938,7 +943,7 @@ img {
    ========================================================================== */
 
 .recent-events-section {
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
 }
 
 .event-calendar-container {
@@ -946,7 +951,7 @@ img {
   width: 100%;
   height: auto;
   overflow: hidden !important;
-  background-color: #f2f2f2;
+  background-color: var(--bg-white);
 }
 
 .event-calendar-container::before {
@@ -1149,7 +1154,7 @@ img {
 .form-control:focus,
 .form-select:focus {
   box-shadow: none;
-  border: 2px solid #b9283d;
+  border: 2px solid var(--primary-red);
 }
 
 /* ==========================================================================
@@ -1506,7 +1511,7 @@ img {
     width: 18rem;
     height: 9rem;
     border-radius: 20px;
-    background: #b9283d;
+    background: var(--primary-red);
     transition: all 0.3s ease;
   }
 
@@ -1588,7 +1593,7 @@ img {
 
 
   .ribbon-container {
-    background-color: #f2f2f2;
+    background-color: var(--bg-white);
   }
 
   .ribbon-stat {
