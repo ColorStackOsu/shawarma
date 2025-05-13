@@ -1631,6 +1631,10 @@ img {
   .testimonial-card p{
     font-size: 0.925rem;
   }
+  .testimonial-card h4{
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
 
   .involved-card,
   .involved-card-red {
