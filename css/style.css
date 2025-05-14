@@ -305,7 +305,7 @@ img {
 
 .logos-slide {
   display: inline-block;
-  animation: 60s slide infinite linear;
+  animation: 50s slide infinite linear;
   will-change: transform;
   padding-right: 0;
 }
