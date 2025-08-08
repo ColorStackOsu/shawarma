@@ -1,5 +1,5 @@
-import EVENTS_DATA from './events-data.js';
-import BOARD_DATA from './eboard-data.js'
+import EVENTS_DATA from "./events-data.js";
+import BOARD_DATA from "./eboard-data.js";
 
 //const EVENTS_JSON = JSON.parse(EVENTS_DATA);
 //const BOARD_JSON = JSON.parse(BOARD_DATA);
@@ -8,7 +8,7 @@ import BOARD_DATA from './eboard-data.js'
 // INITIALIZATION
 // ------------------------
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   //initialize functionality when DOM is ready
   initRevealAnimations();
   setupEventCardHandlers();
@@ -23,23 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initRevealAnimations() {
   // Grab all reveal class elements
-  const reveals = document.querySelectorAll('.reveal, .reveal-lg, .reveal-md, .reveal-forward, .reveal-lg-forward, .reveal-left, .reveal-right, .reveal-sm-left, .reveal-sm-right');
-  
-  const revealElements = function() {
+  const reveals = document.querySelectorAll(
+    ".reveal, .reveal-lg, .reveal-md, .reveal-forward, .reveal-lg-forward, .reveal-left, .reveal-right, .reveal-sm-left, .reveal-sm-right"
+  );
+
+  const revealElements = function () {
     for (let i = 0; i < reveals.length; i++) {
       const windowHeight = window.innerHeight;
       const elementTop = reveals[i].getBoundingClientRect().top;
       const elementVisible = 50; // When the element becomes visible
-      
+
       if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add('active');
+        reveals[i].classList.add("active");
       }
     }
   };
-  
-  window.addEventListener('scroll', revealElements);
-  window.addEventListener('resize', revealElements);
-  
+
+  window.addEventListener("scroll", revealElements);
+  window.addEventListener("resize", revealElements);
+
   // Initial call to reveal elements that are already visible
   revealElements();
 }
@@ -48,13 +50,12 @@ function initRevealAnimations() {
 // EVENT CARD FUNCTIONS
 // ------------------------
 
-function addEventCards(events){
+function addEventCards(events) {
   const eventContainer = document.getElementById("event-container");
-  
-  if (!eventContainer){
-    return;
 
-  }else{
+  if (!eventContainer) {
+    return;
+  } else {
     // iterate through all JSON events and create cards
     for (var i = 0; i < events.length; i++) {
       const newDiv = document.createElement("div");
@@ -88,23 +89,29 @@ addEventCards(EVENTS_DATA);
 // BOARD CARD FUNCTIONS
 // ------------------------
 
-function displayBoard(year){
+function displayBoard(year) {
   const boardContainer = document.getElementById("board-body");
   const members = BOARD_DATA.boards[year].members; //grab members of respective year
 
-  if(!boardContainer){
+  if (!boardContainer) {
     return;
-  }else{
-    boardContainer.innerHTML = ''; //clear container
+  } else {
+    boardContainer.innerHTML = ""; //clear container
 
-    for(let i = 0 ; i < members.length; i++){
+    for (let i = 0; i < members.length; i++) {
       const commentNode = document.createComment(` ${members[i].name} `); // comment member's name
       boardContainer.appendChild(commentNode);
 
       //Create member card
       const memberCard = document.createElement("div");
-      memberCard.classList.add("col-lg-3", "col-md-4", "col-6", "py-md-3", "mx-auto");
-      
+      memberCard.classList.add(
+        "col-lg-3",
+        "col-md-4",
+        "col-6",
+        "py-md-3",
+        "mx-auto"
+      );
+
       const delay = ((i % 4) + 1) * 100; // calculate delay needed based on position in row
 
       memberCard.innerHTML = `
@@ -136,68 +143,79 @@ function displayBoard(year){
             <p class="fun-fact-content mb-0">${members[i].funfact}</p>
         </div>
 
-      </div>`
+      </div>`;
 
       boardContainer.appendChild(memberCard);
-
     }
 
     balanceGrid(boardContainer, members.length); //balance bootstrap grid if last row is not full (center)
     initRevealAnimations();
   }
-
 }
-displayBoard("2024-2025"); // display most recent board by default
+displayBoard("2025-2026"); // display most recent board by default
 
 //BUTTON LOGIC
 const btn2023 = document.getElementById("btn-2023-2024");
 const btn2024 = document.getElementById("btn-2024-2025");
+const btn2025 = document.getElementById("btn-2025-2026");
 
 //2023-2024 Button
-if(btn2023){
-  btn2023.addEventListener("click", function(){
+if (btn2023) {
+  btn2023.addEventListener("click", function () {
     displayBoard("2023-2024");
-  
-    const buttons = document.querySelectorAll(".btn-primary");
+
+    const buttons = document.querySelectorAll(".board-btn");
     //set all buttons to inactive
-    buttons.forEach(btn => {
+    buttons.forEach((btn) => {
       btn.classList.add("inactive");
-    })
+    });
     btn2023.classList.remove("inactive"); // set target button to active
-  
   });
 }
 
 //2024-2025 Button
-if(btn2024){
-  btn2024.addEventListener("click", function(){
+if (btn2024) {
+  btn2024.addEventListener("click", function () {
     displayBoard("2024-2025");
-  
-    const buttons = document.querySelectorAll(".btn-primary");
+
+    const buttons = document.querySelectorAll(".board-btn");
     //set all buttons to inactive
-    buttons.forEach(btn => {
+    buttons.forEach((btn) => {
       btn.classList.add("inactive");
-    })
+    });
     btn2024.classList.remove("inactive"); // set target button to active
   });
 }
 
+//2024-2025 Button
+if (btn2025) {
+  btn2025.addEventListener("click", function () {
+    displayBoard("2025-2026");
+
+    const buttons = document.querySelectorAll(".board-btn");
+    //set all buttons to inactive
+    buttons.forEach((btn) => {
+      btn.classList.add("inactive");
+    });
+    btn2025.classList.remove("inactive"); // set target button to active
+  });
+}
 
 // Add empty "balancer" divs to balance and center bootstrap grid system of last row
-function balanceGrid(container, totalMembers){
+function balanceGrid(container, totalMembers) {
   const maxPerRow = 4;
   const membersInLastRow = totalMembers % maxPerRow || maxPerRow;
-  
+
   // Only add balancers if we have 1 or 2 members in the last row
   if (membersInLastRow === 2) {
-    const allMemberCards = container.querySelectorAll('.col-lg-3');
-  
+    const allMemberCards = container.querySelectorAll(".col-lg-3");
+
     const lastRowStartIndex = totalMembers - membersInLastRow; //find index of last row
-    
-    //create balancer divs before 
+
+    //create balancer divs before
     const balancersBefore = document.createElement("div");
     balancersBefore.classList.add("col-lg-3", "d-none", "d-lg-block");
-    
+
     //insert balancer before the first card of the last row
     const firstCardOfLastRow = allMemberCards[lastRowStartIndex];
     container.insertBefore(balancersBefore, firstCardOfLastRow);
@@ -207,10 +225,8 @@ function balanceGrid(container, totalMembers){
     const balancerAfter = document.createElement("div");
     balancerAfter.classList.add("col-lg-3", "d-none", "d-lg-block");
     container.appendChild(balancerAfter);
-    
   }
 }
-
 
 // ------------------------
 // GALLERY MODAL FUNCTIONS
@@ -219,13 +235,13 @@ function setupEventCardHandlers() {
   // Use event delegation for better performance
   const eventContainer = document.getElementById("event-container");
   if (!eventContainer) return;
-  
+
   // Add a single listener to the container
-  eventContainer.addEventListener('click', function(e) {
-    const eventCard = e.target.closest('.event-card');
+  eventContainer.addEventListener("click", function (e) {
+    const eventCard = e.target.closest(".event-card");
     if (!eventCard) return;
-    
-    const eventId = eventCard.getAttribute('data-event-id');
+
+    const eventId = eventCard.getAttribute("data-event-id");
     if (eventId) {
       openGalleryModal(eventId);
     }
@@ -233,76 +249,81 @@ function setupEventCardHandlers() {
 }
 
 function openGalleryModal(eventId) {
-  const eventData = EVENTS_DATA.find(event => event.id === eventId); //find matching ID
-  
+  const eventData = EVENTS_DATA.find((event) => event.id === eventId); //find matching ID
+
   if (!eventData || !eventData.galleryImages) {
     console.error(`No gallery data found for event ID: ${eventId}`);
     return;
   }
-  
+
   //update modal title
-  const modalTitle = document.getElementById('galleryModalLabel');
+  const modalTitle = document.getElementById("galleryModalLabel");
   if (modalTitle) {
-    modalTitle.textContent = eventData.galleryTitle || `${eventData.name} - ${eventData.date}`;
+    modalTitle.textContent =
+      eventData.galleryTitle || `${eventData.name} - ${eventData.date}`;
   }
-  
+
   // Create a simple gallery grid
-  const galleryContainer = document.getElementById('gallery-container');
+  const galleryContainer = document.getElementById("gallery-container");
   if (!galleryContainer) return;
-  
-  galleryContainer.innerHTML = '';
-  
+
+  galleryContainer.innerHTML = "";
+
   // Create a grid of thumbnails
-  const galleryGrid = document.createElement('div');
-  galleryGrid.className = 'row g-2';
-  
+  const galleryGrid = document.createElement("div");
+  galleryGrid.className = "row g-2";
+
   eventData.galleryImages.forEach((image, index) => {
-    const col = document.createElement('div');
-    col.className = 'col-6 col-md-4';
-    
-    const imgContainer = document.createElement('div');
-    imgContainer.className = 'img-thumbnail-container';
-    
-    const img = document.createElement('img');
+    const col = document.createElement("div");
+    col.className = "col-6 col-md-4";
+
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "img-thumbnail-container";
+
+    const img = document.createElement("img");
     img.src = image.src;
-    img.alt = image.alt || '';
-    img.className = 'img-fluid thumbnail';
-    img.loading = 'lazy';
-    img.setAttribute('data-full-img', image.src);
-    img.setAttribute('data-index', index);
-    
+    img.alt = image.alt || "";
+    img.className = "img-fluid thumbnail";
+    img.loading = "lazy";
+    img.setAttribute("data-full-img", image.src);
+    img.setAttribute("data-index", index);
+
     // Click event to show full size
-    img.onclick = function() {
+    img.onclick = function () {
       showFullSizeImage(image.src, image.alt);
     };
-    
+
     imgContainer.appendChild(img);
     col.appendChild(imgContainer);
     galleryGrid.appendChild(col);
   });
-  
+
   galleryContainer.appendChild(galleryGrid);
-  
+
   // Show the modal
-  const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+  const galleryModal = new bootstrap.Modal(
+    document.getElementById("galleryModal")
+  );
   galleryModal.show();
-  
+
   // Add a hidden.bs.modal event listener to ensure proper cleanup
-  const modalElement = document.getElementById('galleryModal');
-  modalElement.addEventListener('hidden.bs.modal', cleanupBackdrop, { once: true });
+  const modalElement = document.getElementById("galleryModal");
+  modalElement.addEventListener("hidden.bs.modal", cleanupBackdrop, {
+    once: true,
+  });
 }
 
-function showFullSizeImage(src, alt){
+function showFullSizeImage(src, alt) {
   // Create or get the full-size image modal
-  let fullImageModal = document.getElementById('fullImageModal');
-  
+  let fullImageModal = document.getElementById("fullImageModal");
+
   if (!fullImageModal) {
     // Create the modal if it doesn't exist
-    fullImageModal = document.createElement('div');
-    fullImageModal.id = 'fullImageModal';
-    fullImageModal.className = 'modal fade';
-    fullImageModal.setAttribute('tabindex', '-1');
-    
+    fullImageModal = document.createElement("div");
+    fullImageModal.id = "fullImageModal";
+    fullImageModal.className = "modal fade";
+    fullImageModal.setAttribute("tabindex", "-1");
+
     fullImageModal.innerHTML = `
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -315,23 +336,23 @@ function showFullSizeImage(src, alt){
         </div>
       </div>
     `;
-    
+
     document.body.appendChild(fullImageModal);
-    
+
     // Create a completely separate close handler
-    const closeBtn = fullImageModal.querySelector('.btn-close');
-    closeBtn.addEventListener('click', function() {
+    const closeBtn = fullImageModal.querySelector(".btn-close");
+    closeBtn.addEventListener("click", function () {
       // Close using Bootstrap API
       const bsModal = bootstrap.Modal.getInstance(fullImageModal);
       if (bsModal) bsModal.hide();
     });
   }
-  
+
   // Set the image source
-  const fullSizeImg = fullImageModal.querySelector('#fullSizeImg');
+  const fullSizeImg = fullImageModal.querySelector("#fullSizeImg");
   fullSizeImg.src = src;
-  fullSizeImg.alt = alt || '';
-  
+  fullSizeImg.alt = alt || "";
+
   // Show the modal
   const bsModal = new bootstrap.Modal(fullImageModal);
   bsModal.show();
@@ -339,15 +360,15 @@ function showFullSizeImage(src, alt){
 
 function cleanupBackdrop() {
   // Remove all modal backdrops
-  const backdrops = document.querySelectorAll('.modal-backdrop');
-  backdrops.forEach(backdrop => {
+  const backdrops = document.querySelectorAll(".modal-backdrop");
+  backdrops.forEach((backdrop) => {
     if (backdrop && backdrop.parentNode) {
       backdrop.parentNode.removeChild(backdrop);
     }
   });
-  
+
   // Also reset body classes and styles
-  document.body.classList.remove('modal-open');
-  document.body.style.overflow = '';
-  document.body.style.paddingRight = '';
+  document.body.classList.remove("modal-open");
+  document.body.style.overflow = "";
+  document.body.style.paddingRight = "";
 }
