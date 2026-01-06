@@ -33,36 +33,34 @@
 <body>
     <!--NAVIGATION-->
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
             <div class="container-fluid px-md-5 px-3">
-    
                 <!--Logo-->
-                <a class = "navbar-brand" href="index.html" target="_self">
-                    <img class = "nav-logo p-0" src="images/Logo Horizontal.png" alt="ColorStackOSU Logo">
+                <a class="navbar-brand" href="index.html" target="_self" aria-label="ColorStackOSU Home">
+                    <img class="nav-logo p-0" src="images/Logo Horizontal.png" alt="ColorStackOSU Logo" draggable="false">
                 </a>
     
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!--Nav Items-->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-4"> <a href="events.html" class="nav-link">Events</a> </li>
-                        <li class="nav-item mx-4"> <a href="sponsors.html" class="nav-link">Sponsors</a> </li>
-                        <li class="nav-item mx-4"> <a href="execboard.html" class="nav-link">Meet Us</a> </li>
+                        <li class="nav-item mx-4"><a href="events.html" class="nav-link">Events</a></li>
+                        <li class="nav-item mx-4"><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+                        <li class="nav-item mx-4"><a href="execboard.html" class="nav-link">Meet Us</a></li>
                         <li class="nav-item dropdown mx-4"> 
-                            <a href="#" class="nav-link dropdown-toggle role="button" data-bs-toggle="dropdown" aria-expanded="false"">
+                            <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
                                 About Us
                             </a> 
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" aria-label="About Us submenu">
                                 <li><a class="dropdown-item" href="about.html#about-us">About</a></li>
                                 <li><a class="dropdown-item" href="about.html#contact-us">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="https://color-stack-test-bank.vercel.app/">Test Bank</a></li>
                             </ul>
-                        
                         </li>
                     </ul>
                 </div>
-                
             </div>
         </nav>
     </header>
