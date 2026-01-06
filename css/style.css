@@ -557,37 +557,76 @@ img {
   font-weight: 600;
 }
 
-/* Fun Fact Popup */
-
-.fun-fact-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(178, 34, 52, 0.5);
-  color: white;
+#memberModal .modal-content {
+  position: relative;
+  background-color: #f2f2f2 !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+#memberModal .modal-body {
+  background-color: #f2f2f2 !important;
+  padding: 0 !important;
+}
+
+#memberModal .member-modal__inner {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+#memberModal .member-modal__img {
   width: 100%;
-  height: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  background: #f2f2f2;
+  border: 1px solid rgba(0, 0, 0, 0.195);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-.fun-fact-content {
-  display: none; /*delete later when ready*/
-  padding: 1rem;
-  color: white;
-  text-align: center;
-  max-width: 90%;
-}
-
-.fun-fact-text {
-  display: none; /*delete later when ready*/
+#memberModal .member-modal__text {
   font-size: 0.9rem;
-  line-height: 1.3;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+#memberModal .member-modal__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  filter: none !important;
+  opacity: 0.7;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#memberModal .member-modal__close:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+#memberModal .member-modal__close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  #memberModal .member-modal__inner {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  #memberModal .member-modal__img {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================================================
@@ -1367,18 +1406,6 @@ img {
 
   .board-card-inner:hover {
     cursor: pointer;
-  }
-
-  /* reveal popup */
-
-  /*UNCOMMENT WHEN READY*/
-  .board-card-inner:hover .fun-fact-overlay {
-    /*
-        height: auto;
-        max-height: 70%; /* This prevents it from taking the whole image */
-    /*
-        padding: 20px 15px;
-        */
   }
 
   /* Shiny Hover Gradient Effect */

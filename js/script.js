@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
   //initialize functionality when DOM is ready
   initRevealAnimations();
   setupEventCardHandlers();
-  setupModalReset();
+  setupBoardMemberHandlers();
+
   if (btn2023) btn2023.classList.add("inactive");
   if (btn2024) btn2024.classList.remove("inactive");
 });
@@ -117,15 +118,18 @@ function displayBoard(year) {
       memberCard.innerHTML = `
       <div class="board-card reveal delay-${delay}">
         <div class="board-card-inner rounded-4">
-            <img src="${members[i].img}" class="img-fluid rounded-4">
+            <img
+              src="${members[i].img}"
+              class="img-fluid rounded-4 board-member-trigger"
+              alt="${members[i].name}"
+              role="button"
+              tabindex="0"
+              data-board-year="${year}"
+              data-member-index="${i}"
+            >
+
             <div class="gradient-overlay"></div> <!--Hover effect-->
-            <!--Fun Fact Popup (Hidden)-->
-            <div class="fun-fact-overlay">
-                <div class="fun-fact-content">
-                    <h6 class="mb-1">Fun Fact</h6>
-                    <p class="mb-0">${members[i].funfact}</p>
-                </div>
-            </div>
+            
         </div>
 
         <a href="${members[i].linkedin}" class="text-decoration-none text-dark ">
@@ -136,12 +140,6 @@ function displayBoard(year) {
         </a> 
         
         <p class="board-card-role mb-0">${members[i].position}</p>
-
-        <!--Fun Fact Popup (SMALL)-->
-        <div class="d-lg-none d-block">
-            <hr class="d-none divide-line-red my-2 w-50"> 
-            <p class="fun-fact-content mb-0">${members[i].funfact}</p>
-        </div>
 
       </div>`;
 
@@ -199,6 +197,83 @@ if (btn2025) {
     });
     btn2025.classList.remove("inactive"); // set target button to active
   });
+}
+
+// ------------------------
+// BOARD MEMBER MODAL
+// ------------------------
+
+function setupBoardMemberHandlers() {
+  const boardContainer = document.getElementById("board-body");
+  if (!boardContainer) return;
+
+  // Event delegation: one listener for all member images (even after re-render)
+  boardContainer.addEventListener("click", function (e) {
+    // Don’t hijack clicks on the LinkedIn <a> (let it navigate)
+    if (e.target.closest("a")) return;
+
+    const trigger = e.target.closest(".board-member-trigger");
+    if (!trigger) return;
+
+    const year = trigger.getAttribute("data-board-year");
+    const index = Number(trigger.getAttribute("data-member-index"));
+    const member = BOARD_DATA?.boards?.[year]?.members?.[index];
+
+    if (!member) return;
+
+    openMemberModal(member);
+  });
+
+  // Optional: keyboard support (Enter/Space)
+  boardContainer.addEventListener("keydown", function (e) {
+    const trigger = e.target.closest(".board-member-trigger");
+    if (!trigger) return;
+
+    if (e.key !== "Enter" && e.key !== " ") return;
+    e.preventDefault();
+
+    const year = trigger.getAttribute("data-board-year");
+    const index = Number(trigger.getAttribute("data-member-index"));
+    const member = BOARD_DATA?.boards?.[year]?.members?.[index];
+    if (!member) return;
+
+    openMemberModal(member);
+  });
+}
+
+function openMemberModal(member) {
+  const nameEl = document.getElementById("memberModalName");
+  const roleEl = document.getElementById("memberModalRole");
+  const bioEl = document.getElementById("memberModalBio");
+  const imgEl = document.getElementById("memberModalImg");
+  const linkedInEl = document.getElementById("memberModalLinkedIn");
+
+  if (nameEl) nameEl.textContent = member.name || "";
+  if (roleEl) roleEl.textContent = member.position || "";
+  if (bioEl) bioEl.textContent = member.bio || "";
+
+  if (imgEl) {
+    imgEl.src = member.img || "";
+    imgEl.alt = member.name || "Board member";
+  }
+
+  if (linkedInEl) {
+    if (member.linkedin) {
+      linkedInEl.href = member.linkedin;
+      linkedInEl.classList.remove("d-none");
+      linkedInEl.removeAttribute("aria-disabled");
+    } else {
+      linkedInEl.href = "#";
+      linkedInEl.classList.add("d-none");
+      linkedInEl.setAttribute("aria-disabled", "true");
+    }
+  }
+
+  const modalEl = document.getElementById("memberModal");
+  if (!modalEl) return;
+
+  const bsModal = new bootstrap.Modal(modalEl);
+  bsModal.show();
 }
 
 // Add empty "balancer" divs to balance and center bootstrap grid system of last row

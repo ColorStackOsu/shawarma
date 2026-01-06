@@ -133,6 +133,70 @@
         </div>
     </footer>
 
+  
+    <!-- MEMBER DETAILS MODAL -->
+    <div class="modal fade" id="memberModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content member-modal">
+
+            <!-- Close button (no header) -->
+            <button
+                type="button"
+                class="btn-close member-modal__close "
+                data-bs-dismiss="modal"
+                aria-label="Close"
+            ></button>
+
+            <div class="modal-body member-modal__body">
+                <div class="member-modal__inner">
+
+                <!-- Left: Image -->
+                <div class="member-modal__left">
+                    <img id="memberModalImg" src="" alt="" class="member-modal__img" />
+                </div>
+
+                <!-- Right: Info -->
+                <div class="member-modal__right">
+                    <h3 id="memberModalName" class="fw-semibold mb-0"></h3>
+                    <p id="memberModalRole" class="board-card-role mb-0"></p>
+                    <hr class="my-2">
+
+                    <p id="memberModalBio" class="member-modal__text mb-0">Placeholder</p>
+
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                    <a
+                        id="memberModalLinkedIn"
+                        class="btn btn-primary inactive border"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                    >
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                    <a
+                        id="memberModalCalendly"
+                        class="btn btn-primary"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <i class="bi bi-calendar-check"></i> Book a Time
+                    </a>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!-- SCRIPT LOADING -->
     <!--Bootstrap JS-->
