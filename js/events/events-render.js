@@ -1,6 +1,9 @@
-import { fetchDriveFolderImages, driveThumb } from "./fetch-gallery.js";
+import { fetchDriveFolderImages } from "./fetch-gallery.js";
 
-export function renderEventCards(events, containerId = "event-container") {
+export async function renderEventCards(
+  events,
+  containerId = "event-container"
+) {
   const eventContainer = document.getElementById(containerId);
   if (!eventContainer) return;
 
@@ -14,10 +17,7 @@ export function renderEventCards(events, containerId = "event-container") {
 
     const delay = ((i % 3) + 1) * 100;
 
-    const cardImgSrc = event.driveThumbnailFileId
-      ? driveThumb(event.driveThumbnailFileId, 1200)
-      : event.img || "images/placeholder-event.jpg";
-
+    const cardImgSrc = await getCoverSrcForEvent(event);
     const cardAlt = event.alt || `${event.name} Thumbnail`;
 
     col.innerHTML = `
@@ -37,6 +37,21 @@ export function renderEventCards(events, containerId = "event-container") {
 
     eventContainer.appendChild(col);
   }
+
+  // Re-trigger reveal (so dynamically added cards become visible)
+  if (typeof initRevealAnimations === "function") initRevealAnimations();
+  window.dispatchEvent(new Event("scroll"));
+}
+
+async function getCoverSrcForEvent(event) {
+  // If Drive folder exists, use first image in folder as cover
+  if (event.driveFolderId) {
+    const images = await fetchDriveFolderImages(event.driveFolderId);
+    if (images && images.length > 0) {
+      return images[0].src; // first photo thumbnail
+    }
+  }
+  return event.img || "images/placeholder-event.jpg";
 }
 
 export function attachEventCardHandlers(
@@ -122,11 +137,9 @@ export async function openGalleryModal(eventId, events) {
 }
 
 function showFullSizeImage(src, alt) {
-  // Create or get the full-size image modal
   let fullImageModal = document.getElementById("fullImageModal");
 
   if (!fullImageModal) {
-    // Create the modal if it doesn't exist
     fullImageModal = document.createElement("div");
     fullImageModal.id = "fullImageModal";
     fullImageModal.className = "modal fade";
@@ -147,27 +160,22 @@ function showFullSizeImage(src, alt) {
 
     document.body.appendChild(fullImageModal);
 
-    // Create a completely separate close handler
     const closeBtn = fullImageModal.querySelector(".btn-close");
     closeBtn.addEventListener("click", function () {
-      // Close using Bootstrap API
       const bsModal = bootstrap.Modal.getInstance(fullImageModal);
       if (bsModal) bsModal.hide();
     });
   }
 
-  // Set the image source
   const fullSizeImg = fullImageModal.querySelector("#fullSizeImg");
   fullSizeImg.src = src;
   fullSizeImg.alt = alt || "";
 
-  // Show the modal
   const bsModal = new bootstrap.Modal(fullImageModal);
   bsModal.show();
 }
 
 function cleanupBackdrop() {
-  // Remove all modal backdrops
   const backdrops = document.querySelectorAll(".modal-backdrop");
   backdrops.forEach((backdrop) => {
     if (backdrop && backdrop.parentNode) {
@@ -175,7 +183,6 @@ function cleanupBackdrop() {
     }
   });
 
-  // Also reset body classes and styles
   document.body.classList.remove("modal-open");
   document.body.style.overflow = "";
   document.body.style.paddingRight = "";
