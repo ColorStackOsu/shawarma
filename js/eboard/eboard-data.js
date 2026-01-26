@@ -8,7 +8,7 @@ const board = {
           img: "images/eboard-photos/kwasi-pic.jpg",
           bio: "My name is Kwasi Fosu and I’m the President of ColorStack OSU. On the technical side I’ve had 1 internship with Mastercard as a SWE focusing on Machine Learning, and will be returning as a full-time engineer. On the non-technical side I enjoy things such as traveling, photography, and cooking. Feel free to reach out!",
           linkedin: "https://www.linkedin.com/in/kwasi-sarfo-fosu-21a179255/",
-          calendly: null,
+          calendly: "https://calendly.com/kfosu21/30min",
           company: "images/sponsor-logos/mastercard-textless.svg",
         },
         {
@@ -17,7 +17,7 @@ const board = {
           img: "images/eboard-photos/kobe-pic.jpg",
           bio: "My name is Kobe, and I’m the vice president for ColorStack. I’m a Data Analytics Major, and last summer I worked as a data intern at Hyperion materials and technologies, this summer, I’ll be joining Capital One as a Data Analyst. Some of my hobbies are playing basketball and going out. If you have any data related questions, or any questions in general, please feel free to ask.",
           linkedin: "https://www.linkedin.com/in/kobejenkins/",
-          calendly: null,
+          calendly: "https://calendly.com/kobejenkins99/30min",
           company: "images/sponsor-logos/CapitalOne.svg",
         },
         {
@@ -35,7 +35,7 @@ const board = {
           img: "images/eboard-photos/rania-pic.jpg",
           bio: "Hi, my name is Rania Omer, and I serve as the Treasurer for ColorStack @ OSU! I major in Computer Science and Engineering with a minor in Studio Art. I’ve previously interned at Microsoft and will be returning this summer as a SWE Intern. I’m also currently working as a Web Dev Intern at OSU. I’ve been involved in orgs and programs like MLT, MSP, MTC, BlackXBold, and Girls Who Code. Outside of school and work, I enjoy reading, painting, photography, and traveling. Happy to chat about technical and professional experiences, study abroad opportunities, or anything else I mentioned!",
           linkedin: "https://www.linkedin.com/in/raniaomer/",
-          calendly: null,
+          calendly: "https://calendly.com/omer-37-osu",
           company: "images/sponsor-logos/microsoft.svg",
         },
         {
@@ -44,7 +44,7 @@ const board = {
           img: "images/eboard-photos/austen-pic.jpg",
           bio: "Hi, my name is Austen and I’m the Media & Web Dev chair! I’m a Computer and Information Science major with a minor in Communication Technology. I’ve previously interned at SEO Tech Developer as a SWE intern as well as AGNT as a UX Design Intern and will be joining HubSpot as a SWE intern this summer! I also currently work as a Full Stack Web Developer here at OSU. On the side, I enjoy anything related to art/design, listening to music, and playing bass & guitar.  If you have any questions regarding graphics, web design/development, or anything else unrelated feel free to reach out!",
           linkedin: "https://www.linkedin.com/in/austenyoung/",
-          calendly: null,
+          calendly: "https://calendly.com/austeytech/30min",
           company: "images/sponsor-logos/hubspot-icon.svg",
         },
 
@@ -64,7 +64,7 @@ const board = {
           img: "images/eboard-photos/raul-pic.jpg",
           bio: "My name is Raul, and I’m a third-year Information Systems student at The Ohio State University. This year, I’m serving as the Operations Chair for ColorStack @ OSU. I’m also the Vice President of the Western Sahel Student Association and work as a Resident Advisor on campus. Professionally, I’ve worked as an IT Vendor Analyst Intern at The Cincinnati Insurance Companies and will be joining Capital One as a Management Internship Program (MIP) Intern. In my free time, I’m usually at the gym, playing soccer, hanging out with friends, or planning community events. I’m always happy to help, so feel free to reach out!",
           linkedin: "https://www.linkedin.com/in/raul-lamar-mainsah/",
-          calendly: null,
+          calendly: "https://calendly.com/raulajebe/30min",
           company: "images/sponsor-logos/CapitalOne.svg",
         },
 
@@ -74,7 +74,7 @@ const board = {
           img: "images/eboard-photos/valdez-pic.jpg",
           bio: "Hello my name is Valdez Kankeu, and I’m a 2nd-year Computer Science & Engineering student currently serving as the Corporate Chair for ColorStack. I’m heading into this summer as a software engineering intern at GoDaddy! When I’m not busy with tech or my responsibilities on campus, you can usually find me hitting the gym or out socializing. I’m always looking to expand my network and meet new people feel free to reach out!",
           linkedin: "https://www.linkedin.com/in/valdez-kankeu/",
-          calendly: null,
+          calendly: "https://calendly.com/vkankeu/30min",
           company: "images/sponsor-logos/godaddy-textless.svg",
         },
 
@@ -84,7 +84,7 @@ const board = {
           img: "images/eboard-photos/harith-pic.jpg",
           bio: "My name is Harith Madani and I’m a junior cse student and the outreach for ColorStack. I’ve previously interned in swe roles with JPMorgan Chase and SEO Tech Developer and I’m currently an intern at HubSpot. I also love travel, watching movies, and playing sports. Feel free to hit me up to discuss internships, career, or if you’d just like to chat!",
           linkedin: "https://www.linkedin.com/in/harith-madani-osu/",
-          calendly: null,
+          calendly: "https://calendly.com/harithmada/30min",
           company: "images/sponsor-logos/hubspot-icon.svg",
         },
         {
@@ -100,9 +100,9 @@ const board = {
           name: "Ingrid Escalante-Hernandez",
           position: "Academic",
           img: "images/eboard-photos/ingrid-pic.jpg",
-          bio: null,
+          bio: "Hello there! My name is Ingrid and I’m a second-year Computer Science and Engineering student. This year, I’m serving as the Academic Chair for ColorStack @ OSU! Professionally, I’ve interned at Procter & Gamble twice and am a current Data Science intern at Nationwide Insurance. During my free time, I’m usually attending concerts, drawing, or reading. I love to help out with anything, so feel free to reach out!",
           linkedin: "https://www.linkedin.com/in/ingridescher/",
-          calendly: null,
+          calendly: "https://calendly.com/ingridscalant/30min",
           company: "images/sponsor-logos/nationwide.svg",
         },
       ],

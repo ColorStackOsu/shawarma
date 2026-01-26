@@ -9,8 +9,9 @@ import { initRevealAnimations } from "./shared/reveal.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Events
+  initRevealAnimations();
+  initEboard(BOARD_DATA, { defaultYear: "2025-2026" });
   await renderEventCards(EVENTS_DATA, "event-container");
   attachEventCardHandlers(EVENTS_DATA, "event-container");
-  initEboard(BOARD_DATA, { defaultYear: "2025-2026" });
   initRevealAnimations();
 });

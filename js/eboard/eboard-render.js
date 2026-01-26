@@ -8,7 +8,7 @@ export function initEboard(
     btn2023Id = "btn-2023-2024",
     btn2024Id = "btn-2024-2025",
     btn2025Id = "btn-2025-2026",
-  } = {}
+  } = {},
 ) {
   // render default
   displayBoard(BOARD_DATA, defaultYear, boardContainerId);
@@ -39,7 +39,7 @@ export function initEboard(
 export function displayBoard(
   BOARD_DATA,
   year,
-  boardContainerId = "board-body"
+  boardContainerId = "board-body",
 ) {
   const boardContainer = document.getElementById(boardContainerId);
   const members = BOARD_DATA?.boards?.[year]?.members;
@@ -58,7 +58,7 @@ export function displayBoard(
       "col-md-4",
       "col-6",
       "py-md-2",
-      "mx-auto"
+      "mx-auto",
     );
 
     const delay = ((i % 4) + 1) * 100;
@@ -105,7 +105,7 @@ export function displayBoard(
 function setupBoardYearButtons(
   BOARD_DATA,
   boardContainerId,
-  { btn2023Id, btn2024Id, btn2025Id }
+  { btn2023Id, btn2024Id, btn2025Id },
 ) {
   const btn2023 = document.getElementById(btn2023Id);
   const btn2024 = document.getElementById(btn2024Id);
@@ -215,7 +215,6 @@ function openMemberModal(member) {
     if (member.linkedin) {
       linkedInEl.href = member.linkedin;
       linkedInEl.classList.remove("d-none");
-      linkedInEl.classList.remove("inactive");
       linkedInEl.removeAttribute("aria-disabled");
     } else {
       linkedInEl.href = "#";

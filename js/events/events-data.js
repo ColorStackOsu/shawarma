@@ -1,5 +1,13 @@
 const events = [
   {
+    id: "matcha-event",
+    name: "Matcha & Map",
+    date: "January 20th, 2026",
+    alt: "Matcha Thumbnail",
+    galleryTitle: "Matcha & Map - January 20th",
+    driveFolderId: "15gz7ygwlRG2KTUnzikKoZ_D18a9S4lUV",
+  },
+  {
     id: "eos-event",
     name: ".atEOS( ) Fall",
     date: "November 18th, 2025",
@@ -38,14 +46,6 @@ const events = [
     alt: "Chase Thumbnail",
     galleryTitle: "Back in the Stack - September 2nd",
     driveFolderId: "1ud7z6ksGCmpDZAiDb39aa8aVy-v7itTC",
-  },
-  {
-    id: "eos-spring-event",
-    name: ".atEOS( ) Spring",
-    date: "April 15th, 2025",
-    alt: "EOS Thumbnail",
-    galleryTitle: ".atEOS( ) Spring - April 15th",
-    driveFolderId: "18xlw33HydIQw7O6hwrtSz02dunSkOPnm",
   },
 ];
 

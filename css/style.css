@@ -176,7 +176,7 @@ img {
 
 .btn-secondary {
   --bs-btn-color: rgb(255, 255, 255);
-  --bs-btn-bg: #202020;
+  --bs-btn-bg: transparent;
   --bs-btn-border-color: rgb(255, 255, 255);
   --bs-btn-hover-color: rgb(245, 245, 245);
   --bs-btn-hover-bg: rgb(50, 50, 50);
@@ -419,7 +419,7 @@ img {
 }
 
 .our-mission-text {
-  font-size: 2rem;
+  font-size: 1.65rem;
   line-height: 1.5;
   font-weight: 200;
 }
@@ -572,7 +572,9 @@ img {
   transform: translateY(-4px);
   opacity: 0.6;
   filter: grayscale(15%);
-  transition: opacity 0.3s ease, filter 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    filter 0.3s ease;
 }
 
 .board-card:hover .company-logo {
@@ -628,7 +630,9 @@ img {
   opacity: 0.7;
   background-color: transparent;
   border-radius: 50%;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 #memberModal .member-modal__close:hover {
@@ -672,7 +676,8 @@ img {
 }
 
 .ribbon-red {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       270deg,
       rgba(255, 255, 255, 0.15) 0%,
       rgba(255, 255, 255, 0.1) 20%,
@@ -686,11 +691,14 @@ img {
   max-height: 11rem;
   min-height: 10rem;
   clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
-  transition: width 0.5s ease, clip-path 0.5s ease;
+  transition:
+    width 0.5s ease,
+    clip-path 0.5s ease;
 }
 
 .ribbon-black {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       90deg,
       rgba(255, 255, 255, 0.15) 0%,
       rgba(255, 255, 255, 0.1) 20%,
@@ -704,7 +712,9 @@ img {
   max-height: 11rem;
   min-height: 10rem;
   margin-left: auto;
-  transition: width 1s ease-out, clip-path 0.5s ease;
+  transition:
+    width 1s ease-out,
+    clip-path 0.5s ease;
   position: relative;
 }
 
@@ -735,7 +745,9 @@ img {
   margin: 0 clamp(2px, 0.5vw, 5px);
   align-self: center;
   padding: 0px;
-  transition: height 0.3s ease, margin 0.3s ease;
+  transition:
+    height 0.3s ease,
+    margin 0.3s ease;
 }
 
 .stat-icon {
@@ -1079,7 +1091,9 @@ img {
   border-radius: 10px;
   transform: translateY(0);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1155,8 +1169,10 @@ img {
   background-color: transparent;
   border: none;
   overflow: hidden;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05),
-    0 0 80px rgba(255, 255, 255, 0.05), 0 0 120px rgba(100, 180, 255, 0.04);
+  box-shadow:
+    0 0 40px rgba(255, 255, 255, 0.05),
+    0 0 80px rgba(255, 255, 255, 0.05),
+    0 0 120px rgba(100, 180, 255, 0.04);
 }
 
 .modal-header {
@@ -1268,7 +1284,9 @@ img {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.75s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.75s ease;
   transition-delay: 0.1s;
   will-change: opacity, transform;
 }
@@ -1281,7 +1299,9 @@ img {
 .reveal-forward {
   opacity: 0;
   transform: scale(0.75);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
 }
 
 .reveal-forward.active {
@@ -1292,13 +1312,17 @@ img {
 .reveal-left {
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .reveal-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .reveal-left.active,
@@ -1397,7 +1421,9 @@ img {
   .reveal-lg {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1.2s ease, transform 1.2s ease;
+    transition:
+      opacity 1.2s ease,
+      transform 1.2s ease;
     transition-delay: 0.1s;
   }
 
@@ -1409,7 +1435,9 @@ img {
   .reveal-lg-forward {
     opacity: 0;
     transform: scale(0.75);
-    transition: opacity 1s ease, transform 1s ease;
+    transition:
+      opacity 1s ease,
+      transform 1s ease;
   }
 
   .reveal-lg-forward.active {
@@ -1465,7 +1493,9 @@ img {
   .reveal-md {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1.2s ease, transform 1.2s ease;
+    transition:
+      opacity 1.2s ease,
+      transform 1.2s ease;
     transition-delay: 0.1s;
   }
 
@@ -1607,14 +1637,18 @@ img {
   .reveal-sm-left {
     opacity: 0;
     transform: translateX(-50px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition:
+      opacity 1s ease,
+      transform 1s ease;
     transition-delay: 0.3s;
   }
 
   .reveal-sm-right {
     opacity: 0;
     transform: translateX(50px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition:
+      opacity 1s ease,
+      transform 1s ease;
     transition-delay: 0.3s;
   }
 
@@ -1769,6 +1803,8 @@ img {
     transform: translateY(-4px);
     opacity: 1;
     filter: grayscale(0%);
-    transition: opacity 0.3s ease, filter 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      filter 0.3s ease;
   }
 }
