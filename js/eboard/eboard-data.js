@@ -26,7 +26,7 @@ const board = {
           img: "images/eboard-photos/arielle-pic.jpg",
           bio: "Hey everyone! My name is Arielle Barnes and I’m a Computer Science & Engineering student and the Secretary of ColorStack. I’m currently a Student Data Engineer in the Office of Technology and Digital Innovation. I previously interned as a Software Development Engineering Intern at GoDaddy, where I worked on a full-stack team and I’ll be returning back this summer! Outside of tech, I like working out, listening to music, and cooking. If you ever need anything or just want to chat, you’re more than welcomed to reach out!",
           linkedin: "https://www.linkedin.com/in/ariellebarnes/",
-          calendly: null,
+          calendly: "https://calendly.com/ariellebarnes63/new-meeting",
           company: "images/sponsor-logos/godaddy-textless.svg",
         },
         {
